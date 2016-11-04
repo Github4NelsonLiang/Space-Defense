@@ -57,8 +57,6 @@
      <Compile Include="Assets\Scripts\Tutorial.cs" />
      <Compile Include="Assets\ShootEnemies.cs" />
      <Compile Include="Assets\SpawnEnemy.cs" />
-     <None Include="Assets\Font\readme.txt" />
-     <None Include="Assets\Cartoony Spaceship Sprites\Readme.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
