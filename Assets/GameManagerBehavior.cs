@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerBehavior : MonoBehaviour {
 
@@ -52,7 +53,8 @@ public class GameManagerBehavior : MonoBehaviour {
 				gameOver = true;
 				GameObject gameOverText = GameObject.FindGameObjectWithTag ("GameOver");
 				gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
-			}
+                SceneManager.LoadScene("GameOver");
+            }
 			// 3 
 			for (int i = 0; i < healthIndicator.Length; i++) {
 				if (i < Health) {
