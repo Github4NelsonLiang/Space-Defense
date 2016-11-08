@@ -51,9 +51,9 @@ public class GameManagerBehavior : MonoBehaviour {
 			// 2
 			if (health <= 0 && !gameOver) {
 				gameOver = true;
-				GameObject gameOverText = GameObject.FindGameObjectWithTag ("GameOver");
+				GameObject gameOverText = GameObject.FindGameObjectWithTag ("GameWon");
 				gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
-                SceneManager.LoadScene("GameOver");
+                //GameOver();
             }
 			// 3 
 			for (int i = 0; i < healthIndicator.Length; i++) {
@@ -77,4 +77,9 @@ public class GameManagerBehavior : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }

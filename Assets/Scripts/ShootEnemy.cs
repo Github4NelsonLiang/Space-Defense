@@ -2,18 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ShootEnemies : MonoBehaviour {
+public class ShootEnemy : MonoBehaviour {
 
 	public List<GameObject> enemiesInRange;
 
 	private float lastShotTime;
-	private MonsterData monsterData;
+	private SoldierData soldierData;
 
 	// Use this for initialization
 	void Start () {
 		enemiesInRange = new List<GameObject>();
 		lastShotTime = Time.time;
-		monsterData = gameObject.GetComponentInChildren<MonsterData> ();
+		soldierData = gameObject.GetComponentInChildren<SoldierData> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +30,7 @@ public class ShootEnemies : MonoBehaviour {
 		}
 		// 2
 		if (target != null) {
-			if (Time.time - lastShotTime > monsterData.CurrentLevel.fireRate) {
+			if (Time.time - lastShotTime > soldierData.CurrentLevel.fireRate) {
 				Shoot(target.GetComponent<Collider2D>());
 				lastShotTime = Time.time;
 			}
@@ -61,7 +61,7 @@ public class ShootEnemies : MonoBehaviour {
 	}
 
 	void Shoot(Collider2D target) {
-		GameObject bulletPrefab = monsterData.CurrentLevel.bullet;
+		GameObject bulletPrefab = soldierData.CurrentLevel.bullet;
 		// 1 
 		Vector3 startPosition = gameObject.transform.position;
 		Vector3 targetPosition = target.transform.position;
@@ -78,7 +78,7 @@ public class ShootEnemies : MonoBehaviour {
 		
 		// 3 
 		Animator animator = 
-			monsterData.CurrentLevel.visualization.GetComponent<Animator> ();
+			soldierData.CurrentLevel.visualization.GetComponent<Animator> ();
 		animator.SetTrigger ("fireShot");
 		AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.PlayOneShot(audioSource.clip);
