@@ -14,10 +14,53 @@ Platform assembly: D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_
 Loading D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.150 seconds
+- Completed reload, in  0.175 seconds
 Platform assembly: D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Users\Shadow\Documents\GitHub\Space-Defense\Space-Defense_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.759702 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 18c0 -> priority: 1 
+  Thread -> id: 374c -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.547945 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 262.
+Total: 0.229135 ms (FindLiveObjects: 0.018172 ms CreateObjectMapping: 0.016197 ms MarkObjects: 0.187259 ms  DeleteObjects: 0.007111 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.422715 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 239.
+Total: 0.210962 ms (FindLiveObjects: 0.036345 ms CreateObjectMapping: 0.008296 ms MarkObjects: 0.160394 ms  DeleteObjects: 0.005925 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.520690 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 238.
+Total: 0.184493 ms (FindLiveObjects: 0.013827 ms CreateObjectMapping: 0.009086 ms MarkObjects: 0.155259 ms  DeleteObjects: 0.005925 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.593382 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 239.
+Total: 0.214123 ms (FindLiveObjects: 0.015802 ms CreateObjectMapping: 0.008691 ms MarkObjects: 0.178567 ms  DeleteObjects: 0.010271 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.388345 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1190.
+Total: 0.474468 ms (FindLiveObjects: 0.045432 ms CreateObjectMapping: 0.025678 ms MarkObjects: 0.342913 ms  DeleteObjects: 0.059654 ms)
+
+cuurent wave0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+cuurent wave0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
