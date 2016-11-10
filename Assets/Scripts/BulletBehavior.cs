@@ -8,7 +8,8 @@ public class BulletBehavior : MonoBehaviour {
 	public GameObject target;
 	public Vector3 startPosition;
 	public Vector3 targetPosition;
-	
+    public GameObject explosion;
+
 	private float distance;
 	private float startTime;
 	
@@ -38,13 +39,15 @@ public class BulletBehavior : MonoBehaviour {
 				healthBar.currentHealth -= Mathf.Max(damage, 0);
 				// 4
 				if (healthBar.currentHealth <= 0) {
-					Destroy(target);
+                    Instantiate(explosion, target.transform.position, target.transform.rotation);
+                    Destroy(target);
 					AudioSource audioSource = target.GetComponent<AudioSource>();
 					AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 					
 					gameManager.Gold += 50;
 				}
 			}
+            //Instantiate(explosion, transform.position, transform.rotation);
 			Destroy(gameObject);
 		}	
 	}

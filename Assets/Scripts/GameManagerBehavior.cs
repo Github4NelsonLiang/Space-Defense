@@ -4,8 +4,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManagerBehavior : MonoBehaviour {
-
-	public Text goldLabel;
+    private bool paused = false;
+    public Text button;
+    private GameData dataObject;
+    public Text goldLabel;
 	private int gold;
 	public int Gold {
   		get { return gold; }
@@ -53,7 +55,7 @@ public class GameManagerBehavior : MonoBehaviour {
 				gameOver = true;
 				GameObject gameOverText = GameObject.FindGameObjectWithTag ("GameWon");
 				gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
-                //GameOver();
+                GameOver();
             }
 			// 3 
 			for (int i = 0; i < healthIndicator.Length; i++) {
@@ -71,15 +73,47 @@ public class GameManagerBehavior : MonoBehaviour {
 		Gold = 1000;
 		Wave = 0;
 		Health = 5;
-	}
+        dataObject = new GameData();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (paused)
+        {
+            Time.timeScale = 0.0F;
+        }
+        else
+        {
+            Time.timeScale = 1.0F;
+        }
 	}
 
     void GameOver()
     {
+        dataObject.updateData(Wave);
+        GameControl.Instance.currentWave = Wave;
+        GameControl.Instance.updateSavedScores(Wave);
         SceneManager.LoadScene("GameOver");
+
+    }
+
+    public void pause()
+    {
+        if (button.text.Equals("Pause"))
+        {
+            button.text = "Continue";
+            paused = true;
+        }
+        else
+        {
+            button.text = "Pause";
+            paused = false;
+        }
+
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }

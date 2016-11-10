@@ -27,6 +27,7 @@ public class SpawnEnemy : MonoBehaviour {
         Instantiate(testEnemyPrefab).GetComponent<MoveEnemy>().waypoints = waypoints;
         gameManager =
 			GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+
 	}
 	
 	// Update is called once per frame
