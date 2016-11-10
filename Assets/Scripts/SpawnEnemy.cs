@@ -35,8 +35,13 @@ public class SpawnEnemy : MonoBehaviour {
 		// 1
 		int currentWave = gameManager.Wave;
 		if (currentWave < waves.Length) {
-			// 2
-			float timeInterval = Time.time - lastSpawnTime;
+            // 2
+            if (gameManager.Wave >= 2)
+            {
+                MoveEnemy.Instance.speed = 10.0f;
+                //waves[currentWave].enemyPrefab.GetComponent<MoveEnemy>();
+            }
+            float timeInterval = Time.time - lastSpawnTime;
 			float spawnInterval = waves[currentWave].spawnInterval;
 			if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) ||
 			     timeInterval > spawnInterval) && 
@@ -46,12 +51,37 @@ public class SpawnEnemy : MonoBehaviour {
 				GameObject newEnemy = (GameObject)
 					Instantiate(waves[currentWave].enemyPrefab);
 				newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+                Debug.Log("cuurent wave" + currentWave);
+                if (currentWave >= 1)
+                {
+                    if(currentWave >= 3)
+                    {
+                        //wave 4:
+                        if(currentWave >= 7)
+                        {
+                            newEnemy.GetComponent<MoveEnemy>().speed = 16.0f;
+                        }
+                        else
+                        {
+                            newEnemy.GetComponent<MoveEnemy>().speed = 8.0f;
+                        }
+                        
+                    }
+                    else
+                    {
+                        // wave 2: 
+                        newEnemy.GetComponent<MoveEnemy>().speed = 4.0f;
+                    }
+                    
+                }
 				enemiesSpawned++;
 			}
 			// 4 
 			if (enemiesSpawned == waves[currentWave].maxEnemies &&
 			    GameObject.FindGameObjectWithTag("Enemy") == null) {
 				gameManager.Wave++;
+
 				gameManager.Gold = Mathf.RoundToInt(gameManager.Gold * 1.1f);
 				enemiesSpawned = 0;
 				lastSpawnTime = Time.time;

@@ -6,11 +6,12 @@ public class MoveEnemy : MonoBehaviour {
 	public GameObject[] waypoints;
 	private int currentWaypoint = 0;
 	private float lastWaypointSwitchTime;
-	public float speed = 1.0f;
-
-	// Use this for initialization
-	void Start () {
+	public float speed = 2.0f;
+    public static MoveEnemy Instance;
+    // Use this for initialization
+    void Start () {
 		lastWaypointSwitchTime = Time.time;
+        Instance = this;
 	}
 	
 	// Update is called once per frame
