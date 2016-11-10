@@ -58,12 +58,17 @@ public class SpawnEnemy : MonoBehaviour {
                     if(currentWave >= 3)
                     {
                         //wave 4:
-                        if(currentWave >= 7)
+                        newEnemy.GetComponent<HealthBar>().maxHealth = 150;
+                        newEnemy.GetComponent<HealthBar>().currentHealth = 150;
+                        if (currentWave >= 7)
                         {
+                            newEnemy.GetComponent<HealthBar>().maxHealth = 200;
+                            newEnemy.GetComponent<HealthBar>().currentHealth = 200;
                             newEnemy.GetComponent<MoveEnemy>().speed = 16.0f;
                         }
                         else
                         {
+
                             newEnemy.GetComponent<MoveEnemy>().speed = 8.0f;
                         }
                         
